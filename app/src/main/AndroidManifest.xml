@@ -10,14 +10,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".presentation.ListCommitActivity"></activity>
-        <activity android:name=".MainActivity">
+
+
+        <activity android:name=".presentation.screen.displayCommits.ListCommitActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".presentation.screen.displayCommitDetail.CommitDetailActivity"></activity>
+
     </application>
 
 </manifest>
