@@ -32,4 +32,25 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    //=== recycler view
+    implementation "androidx.recyclerview:recyclerview:1.1.0-beta04"
+
+
+    //=== dependendy injections
+    api 'com.google.dagger:dagger:2.24'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.24'
+
+    api 'com.google.dagger:dagger-android:2.24'
+    api 'com.google.dagger:dagger-android-support:2.24' // if you use the support libraries
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.24'
+
+
+    //=== network
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
+
+    //=== test
+    testImplementation "io.mockk:mockk:1.9.3"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
 }
