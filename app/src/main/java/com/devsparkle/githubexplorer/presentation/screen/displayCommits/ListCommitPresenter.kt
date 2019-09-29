@@ -1,0 +1,17 @@
+package com.devsparkle.githubexplorer.presentation.screen.displayCommits
+
+import com.devsparkle.githubexplorer.domain.interactor.GithubInteractor
+import com.devsparkle.githubexplorer.presentation.screen.base.BasePresenter
+import javax.inject.Inject
+
+class ListCommitPresenter @Inject constructor(var githubInteractor: GithubInteractor) :
+    BasePresenter<ListCommitContract.View>(),
+    ListCommitContract.Presenter {
+
+
+    override fun getCommitList(user: String, repo: String) {
+
+       // view?.showCommitList(githubInteractor.getJetBrainsKotlinCommits(user, repo))
+    }
+
+}
