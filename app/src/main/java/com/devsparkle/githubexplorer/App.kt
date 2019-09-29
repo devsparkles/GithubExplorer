@@ -11,7 +11,7 @@ import dagger.android.AndroidInjector
 class App : Application(), HasAndroidInjector  {
 
     @set:Inject
-    var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>? = null
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
 
     override fun onCreate() {
@@ -22,6 +22,6 @@ class App : Application(), HasAndroidInjector  {
     }
 
     override fun androidInjector(): AndroidInjector<Any> {
-        return dispatchingAndroidInjector!!
+        return dispatchingAndroidInjector
     }
 }

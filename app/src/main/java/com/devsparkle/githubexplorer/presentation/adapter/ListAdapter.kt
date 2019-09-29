@@ -24,7 +24,7 @@ class ListAdapter(private val context: Context, private val list: MutableList<Co
         holder.bind(commit)
 
         holder.layout!!.setOnClickListener {
-
+            // if you want to create a detail view for the commit
         }
     }
 
@@ -43,13 +43,14 @@ class ListAdapter(private val context: Context, private val list: MutableList<Co
     class ListViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         var layout = itemView.findViewById<ConstraintLayout>(R.id.line)
         val title = itemView.findViewById<TextView>(R.id.textViewCommitTitle)
+        val authorName = itemView.findViewById<TextView>(R.id.textViewAuthorName)
         val date = itemView.findViewById<TextView>(R.id.textViewCommitDate)
         val authorImage = itemView.findViewById<ImageView>(R.id.imageViewAuthorImage)
 
         fun bind(item: CommitDTO) {
             title.setText(item.title)
             date.setText(item.timeAndDate)
-
+            authorName.setText(item.authorName)
             Glide.with(itemView.context)
                 .load(item.authorImage)
                 .apply(RequestOptions.circleCropTransform())
@@ -57,8 +58,4 @@ class ListAdapter(private val context: Context, private val list: MutableList<Co
         }
     }
 
-    interface onItemClickListener {
-        fun itemRemoveClick(post: CommitDTO)
-        fun itemDetail(postId : String)
-    }
 }
