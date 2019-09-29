@@ -15,7 +15,6 @@ import com.devsparkle.githubexplorer.domain.model.CommitDTO
 
 class ListAdapter(private val context: Context, private val list: MutableList<CommitDTO>): RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
-
     override fun getItemCount(): Int {
         return list.size
     }

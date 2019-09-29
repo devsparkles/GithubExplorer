@@ -8,5 +8,6 @@ data class CommitDTO(
     var title: String,
     var authorImage: String,
     var authorName: String,
-    var timeAndDate: String
+    var timeAndDate: String,
+    var authorEmail: String
 ) : Parcelable

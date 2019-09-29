@@ -6,6 +6,7 @@ import com.devsparkle.githubexplorer.presentation.screen.base.BaseContract
 interface ListCommitContract{
     interface View : BaseContract.View {
         fun showCommitList(list: List<CommitDTO>)
+        fun showError(message: String)
     }
 
 

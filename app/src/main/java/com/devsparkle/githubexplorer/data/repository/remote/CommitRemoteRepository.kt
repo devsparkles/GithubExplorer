@@ -12,11 +12,11 @@ import retrofit2.Response
 class CommitRemoteRepository(private var githubService: GithubService,
                              private var mapper: CommitResponseToDTOMapper
 ): ICommitRemoteRepository {
-    override fun getCommits(user: String, repo:String): Single<List<CommitDTO>> {
+    override fun fetchCommits(user: String, repo:String): Single<List<CommitDTO>> {
         return githubService.fetchCommits(user, repo)
             .map {
                 if(it.isNullOrEmpty()){
-                    emptyList<CommitDTO>()
+                    emptyList()
                 } else {
                     mapper.toCommitDTOList(it)
                 }

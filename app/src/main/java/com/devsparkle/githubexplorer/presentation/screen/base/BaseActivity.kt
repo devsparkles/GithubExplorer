@@ -18,15 +18,11 @@ abstract class BaseActivity<V: BaseContract.View, P: BaseContract.Presenter<V>> 
     @Inject
     lateinit var presenter : P
 
-
-
     @CallSuper
-    @Suppress("UNCHECKED_CAST")
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-        presenter.attachLifecycle(lifecycle)
-        presenter.attachView(this as V)
+
 
     }
 

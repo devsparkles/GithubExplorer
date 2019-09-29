@@ -3,4 +3,5 @@
     <string name="title_activity_commit_detail">CommitDetailActivity</string>
 
     <string name="author_commit_image">Author\'s of the commit image</string>
+    <string name="error">Error:</string>
 </resources>

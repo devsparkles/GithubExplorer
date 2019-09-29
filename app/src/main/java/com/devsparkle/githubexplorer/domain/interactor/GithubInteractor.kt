@@ -9,8 +9,8 @@ import javax.inject.Inject
 class GithubInteractor @Inject constructor(val commitRemoteRepository: ICommitRemoteRepository) {
 
 
-    fun getJetBrainsKotlinCommits(user: String, repo:String): Single<List<CommitDTO>> {
-        return commitRemoteRepository.getCommits(user, repo)
+    fun getCommitsByUserAndRepo(user: String, repo:String): Single<List<CommitDTO>> {
+        return commitRemoteRepository.fetchCommits(user, repo)
     }
 
 
