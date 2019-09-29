@@ -16,12 +16,6 @@ import javax.inject.Inject
 
 open class BasePresenter<V : BaseContract.View>: BaseContract.Presenter<V> {
 
-    // LifeCycle code and view injection code
-    @Inject
-    lateinit var view: V
-
-    // end of  LifeCycle code
-
 
     // start of in background thanks to disposable code, because every network call should be done not in the uiThread
     private val disposable: CompositeDisposable = CompositeDisposable()

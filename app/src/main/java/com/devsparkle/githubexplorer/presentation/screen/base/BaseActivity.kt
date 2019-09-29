@@ -22,8 +22,6 @@ abstract class BaseActivity<V: BaseContract.View, P: BaseContract.Presenter<V>> 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
         super.onCreate(savedInstanceState)
-
-
     }
 
     override fun androidInjector(): AndroidInjector<Any>? {

@@ -19,7 +19,6 @@ class ListAdapter(private val context: Context, private val list: MutableList<Co
         return list.size
     }
 
-
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val commit = list[position]
         holder.bind(commit)

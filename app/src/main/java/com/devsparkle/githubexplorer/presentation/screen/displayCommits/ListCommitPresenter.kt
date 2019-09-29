@@ -4,7 +4,10 @@ import com.devsparkle.githubexplorer.domain.interactor.GithubInteractor
 import com.devsparkle.githubexplorer.presentation.screen.base.BasePresenter
 import javax.inject.Inject
 
-class ListCommitPresenter @Inject constructor(val vieww: ListCommitActivity, var githubInteractor: GithubInteractor) :
+class ListCommitPresenter @Inject constructor(
+    val view: ListCommitActivity,
+    var githubInteractor: GithubInteractor
+) :
     BasePresenter<ListCommitContract.View>(),
     ListCommitContract.Presenter {
 
@@ -12,14 +15,13 @@ class ListCommitPresenter @Inject constructor(val vieww: ListCommitActivity, var
     override fun getCommitList(user: String, repo: String) {
         fetch(githubInteractor.getCommitsByUserAndRepo(user, repo),
             {
-                vieww?.showCommitList(it)
+                view.showCommitList(it)
             },
             {
                 it.message?.let {
-                    vieww?.showError(it)
+                    view.showError(it)
                 }
             })
-
     }
 
 }
