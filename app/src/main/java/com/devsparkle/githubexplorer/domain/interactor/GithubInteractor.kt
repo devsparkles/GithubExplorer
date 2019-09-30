@@ -6,7 +6,7 @@ import com.devsparkle.githubexplorer.domain.repository.ICommitRemoteRepository
 import io.reactivex.Single
 import javax.inject.Inject
 
-class GithubInteractor @Inject constructor(val commitRemoteRepository: ICommitRemoteRepository) {
+open class GithubInteractor @Inject constructor(val commitRemoteRepository: ICommitRemoteRepository) {
 
 
     fun getCommitsByUserAndRepo(user: String, repo:String): Single<List<CommitDTO>> {

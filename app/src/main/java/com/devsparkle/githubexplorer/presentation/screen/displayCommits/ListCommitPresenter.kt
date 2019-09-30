@@ -5,7 +5,7 @@ import com.devsparkle.githubexplorer.presentation.screen.base.BasePresenter
 import javax.inject.Inject
 
 class ListCommitPresenter @Inject constructor(
-    val view: ListCommitActivity,
+    val view: ListCommitContract.View,
     var githubInteractor: GithubInteractor
 ) :
     BasePresenter<ListCommitContract.View>(),
